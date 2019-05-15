@@ -1,8 +1,7 @@
 {% extends "szablon.html" %}
-{% block tytul_strony %} Dodaj ucznia. {% endblock %}
-{% block h1 %}Dodaj ucznia{% endblock %}
-{% block lead %}Dodaj ucznia{% endblock %}
-{% block h2 %}Uczeń {% endblock %}
+{% block tytul_strony %} Lista uczniów {% endblock %}
+{% block h1 %}Lista uczniów{% endblock %}
+{% block lead %}Tutaj możesz sprawdzić, czy jesteś na liście.{% endblock %}
 {% block tresc%}
 
 <ol>
@@ -21,7 +20,16 @@
       <br>
       Klasa: {{u.klasa.nazwa}}
       <br>
+      <a href="{{ url_for('edytuj_ucznia', u_id=u.id) }}">
+        <button class="btn btn-info">Edytuj</button>
+        
+      </a>
+      <a href="{{ url_for('usun_ucznia', u_id=u.id) }}">
+        <button class="btn btn-danger">Usuń</button>
+      </a>
+      
     </li>
   {% endfor %}
 </ol>
 {% endblock %}
+

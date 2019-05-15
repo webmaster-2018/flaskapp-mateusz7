@@ -1,7 +1,7 @@
 {% extends "szablon.html" %}
 {% block tytul_strony %}Dodaj klasę {% endblock %}
 {% block h1 %}Dodaj klasę{% endblock %}
-{% block lead %}Tu możesz dodać klasę{% endblock %}
+{% block lead %}Tutaj możesz dodać klasę.{% endblock %}
 {% block tresc%}
 <form method="POST">
   {{ form.csrf_token }}
@@ -21,3 +21,4 @@
 </form>
 
 {% endblock %}
+
